@@ -1,0 +1,10 @@
+progjar's source
+
+progjar stand for "Pemrograman Jaringan", it's Indonesian means Network Programming.
+This repo consist of source file which is in Python during the subject Network Programming on fifth semester 2011.
+
+tugas1/ : basic client-senrver communication
+tugas2/ : file transfer
+tugas3/ : http
+uts/ : thread
+fp/ : snake-and-ladders game

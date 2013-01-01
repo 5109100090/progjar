@@ -1,0 +1,37 @@
+Client flow:
+--------------------------------------------------
+
+- There are three concurrent action: prompt, send, receive
+- So, we make three threads for them, respectively
+- Prompt thread is started first
+- Sequence of command: set username, list, chat initiator, chat start, exit
+- How to make a thread? How to start and stop it? Let's check it out.
+
+Server flow:
+--------------------------------------------------
+- Managing client using select module is enough, since we handle two client only
+- For each connected client, do process (one process at a time), save it into dictionary {address, socket client}
+
+- Set username: 
+    - Receive message
+    - Split message
+    - Add username to buddy dictionary {buddy, address}
+
+- List:
+    - Get buddy dictionary key since we save buddy name as key
+    - Convert it to string, send to client
+
+- Chat initiator
+    - Set default source and destination, set them to variable
+
+- Chat start
+    - It is just thread trigger to start
+    - So just pass it *_*
+
+- Chat conversation
+    - Check where incoming message come from is (source socket)
+    - Check its socket
+    - Send use destination socket
+    - Do check for swapable source and destination (Two client can have a chat each other, two way chat, not one way)
+
+
